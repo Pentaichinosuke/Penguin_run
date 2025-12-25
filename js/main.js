@@ -39,6 +39,7 @@ const viewerImg = document.getElementById("viewer-img");
 if (viewer && viewerImg) {
   document.querySelectorAll(".gallery img").forEach(img => {
     img.addEventListener("click", () => {
+      const img = item.querySelector("img");
       viewerImg.src = img.src;
       viewer.style.display = "flex";
 
