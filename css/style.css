@@ -143,6 +143,10 @@ a:hover {
   z-index: 9998;
 }
 
+#image-viewer .caption {
+  pointer-events: none; /* クリックを透過 */
+}
+
 #image-viewer img {
   max-width: 90vw;
   max-height: 90vh;

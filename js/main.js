@@ -40,6 +40,7 @@ if (viewer && viewerImg) {
   document.querySelectorAll(".gallery img").forEach(img => {
     img.addEventListener("click", () => {
       viewerImg.src = img.src;
+      viewer.style.display = "flex";
 
       // 画像のタイトルも表示したい場合
       const caption = img.alt;
@@ -56,8 +57,11 @@ if (viewer && viewerImg) {
     });
   });
 
-  viewer.addEventListener("click", () => {
+viewer.addEventListener("click", (e) => {
+  // 背景（viewer 本体）をクリックしたときのみ閉じる
+  if (e.target === viewer) {
     viewer.style.display = "none";
-  });
+  }
+});
 }
 
