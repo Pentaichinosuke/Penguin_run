@@ -1,62 +1,131 @@
-/* model style */
-  #terms-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-  }
+/* =========================
+   基本設定
+========================= */
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  background-color: #f7f7f7;
+  color: #333;
+}
 
-  #terms-box {
-    background: white;
-    padding: 20px;
-    width: 300px;
-    border-radius: 8px;
-    text-align: center;
-  }
+/* モーダル表示中はスクロール禁止 */
+body.locked {
+  overflow: hidden;
+}
 
-  body.locked {
-    overflow: hidden;
-  }
+/* =========================
+   リンク
+========================= */
+a {
+  color: #0066cc;
+  text-decoration: none;
+}
 
-/* ===== 画像拡大ビュー ===== */
+a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   利用規約モーダル
+========================= */
+#terms-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;              /* ← JSで表示制御 */
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+#terms-box {
+  background: #ffffff;
+  padding: 24px;
+  width: 90%;
+  max-width: 420px;
+  border-radius: 10px;
+  text-align: left;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+#terms-box h2 {
+  text-align: center;
+  margin-top: 0;
+}
+
+.terms-text {
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+}
+
+.agree-text {
+  text-align: center;
+  font-weight: bold;
+  margin: 12px 0;
+}
+
+.agree-row {
+  text-align: center;
+}
+
+.agree-btn {
+  padding: 10px 18px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #0066cc;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.agree-btn:hover {
+  background-color: #004c99;
+}
+
+/* =========================
+   ギャラリー一覧
+========================= */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.gallery img {
+  width: 100%;
+  max-width: 120px;           /* 一覧表示サイズ */
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* =========================
+   画像拡大ビュー
+========================= */
 #image-viewer {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.85);
-  display: none;              /* ← 初期状態は非表示 */
-  justify-content: center;
+  display: none;              /* 初期は非表示 */
   align-items: center;
+  justify-content: center;
   z-index: 9998;
 }
 
 #image-viewer img {
-  max-width: 90vw;            /* 画面幅に応じて調整 */
-  max-height: 90vh;           /* 画面高さに応じて調整 */
+  max-width: 90vw;
+  max-height: 90vh;
   border-radius: 8px;
   box-shadow: 0 0 20px rgba(0,0,0,0.6);
-}
-
-/* ===== ギャラリー一覧 ===== */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 16px;
-  margin-top: 20px;
-}
-
-/* 一覧表示時の画像 */
-.gallery img {
-  max-width: 120px;           /* 表示サイズを制限 */
-}
-
-/* ホバー時の効果（任意だが見やすい） */
-.gallery img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
