@@ -94,6 +94,26 @@ a:hover {
   margin-top: 24px;
 }
 
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gallery-item img {
+  max-width: 200px; /* 適宜調整 */
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.caption {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #333;
+  text-align: center;
+}
+
 .gallery img {
   width: 100%;
   max-width: 120px;           /* 一覧表示サイズ */
