@@ -100,15 +100,15 @@ a:hover {
   align-items: center;
 }
 
+.gallery-item .caption {
+  pointer-events: none; /* キャプションはクリックを透過 */
+}
+
 .gallery-item img {
   max-width: 200px; /* 適宜調整 */
   cursor: pointer;
   border: 1px solid #ccc;
   border-radius: 8px;
-}
-
-.gallery-item .caption {
-  pointer-events: none; /* キャプションはクリックを透過 */
 }
 
 .caption {
