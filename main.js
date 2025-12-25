@@ -15,16 +15,16 @@
 
   // 同意ボタンから呼ばれる関数
   window.agreeTerms = function () {
-    localStorage.setItem(agreedKey, 'true'); // ← ★必須
+//    localStorage.setItem(agreedKey, 'true'); // ← ★必須
     hideModal();
   };
 
   document.addEventListener('DOMContentLoaded', function () {
-    if (!overlay) return;
+    //if (!overlay) return;
 
-    if (localStorage.getItem(agreedKey) === 'true') {
-      hideModal();
-    } else {
+    //if (localStorage.getItem(agreedKey) === 'true') {
+      //hideModal();
+    //} else {
       showModal();
     }
   });
