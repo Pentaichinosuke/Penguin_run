@@ -147,6 +147,7 @@ a:hover {
   display: none;              /* 初期は非表示 */
   align-items: center;
   justify-content: center;
+  flex-direction: column; /* 画像とキャプションを縦に並べる */
   z-index: 9998;
 }
 
@@ -166,4 +167,6 @@ a:hover {
   font-size: 18px;
   color: #fff;
   text-align: center;
+  max-width: 80%;         /* 画像と同じ幅に合わせる */
+  pointer-events: none;   /* クリック透過 */
 }
