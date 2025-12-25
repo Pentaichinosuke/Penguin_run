@@ -35,26 +35,18 @@ document.addEventListener("DOMContentLoaded", () => {
   ========================= */
 const viewer = document.getElementById("image-viewer");
 const viewerImg = document.getElementById("viewer-img");
+const viewerCaption = document.querySelector(".viewer-caption");
 
-if (viewer && viewerImg) {
+
   document.querySelectorAll(".gallery-item").forEach(item => {
     item.addEventListener("click", () => {
       const img = item.querySelector("img");
+      const caption = item.querySelector(".caption").textContent;
+
       viewerImg.src = img.src;
+      viewerCaption.textContent = caption;
       viewer.style.display = "flex";
 
-      // 画像のタイトルも表示したい場合
-      const caption = img.alt;
-      viewer.querySelector(".caption")?.remove(); // 前のキャプション削除
-      const capDiv = document.createElement("div");
-      capDiv.className = "caption";
-      capDiv.textContent = caption;
-      capDiv.style.color = "white";
-      capDiv.style.marginTop = "10px";
-      capDiv.style.textAlign = "center";
-      viewer.appendChild(capDiv);
-
-      viewer.style.display = "flex";
     });
   });
 
@@ -64,5 +56,6 @@ viewer.addEventListener("click", (e) => {
     viewer.style.display = "none";
   }
 });
-}
+
+});
 
