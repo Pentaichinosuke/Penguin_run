@@ -64,3 +64,20 @@
   max-height: 90%;
   border-radius: 8px;
 }
+
+/* ギャラリー一覧 */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+/* 一覧表示時の画像サイズ */
+.gallery img {
+  width: 150px;       /* 小さく表示 */
+  height: auto;
+  cursor: pointer;
+  border-radius: 6px;
+  margin: 0 auto;
+  display: block;
+}
