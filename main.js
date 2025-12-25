@@ -11,7 +11,7 @@
     document.body.classList.add('locked');
   }
   window.agreeTerms = function() {
-    localStorage.setItem(agreedKey, 'true');
+    //localStorage.setItem(agreedKey, 'true');
     hideModal();
   };
   // 初期表示判定
@@ -23,3 +23,20 @@
     }
   });
 })();
+
+// image viewer
+document.addEventListener("DOMContentLoaded", () => {
+  const viewer = document.getElementById("image-viewer");
+  const viewerImg = document.getElementById("viewer-img");
+
+  document.querySelectorAll(".gallery img").forEach(img => {
+    img.addEventListener("click", () => {
+      viewerImg.src = img.src;
+      viewer.style.display = "flex";
+    });
+  });
+
+  viewer.addEventListener("click", () => {
+    viewer.style.display = "none";
+  });
+});
