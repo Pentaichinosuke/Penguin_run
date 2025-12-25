@@ -52,14 +52,7 @@
 
 /* 一覧表示時の画像 */
 .gallery img {
-  width: 100%;                /* グリッドに合わせる */
-  max-width: 160px;           /* 表示サイズを制限 */
-  height: auto;
-  cursor: pointer;
-  border-radius: 6px;
-  margin: 0 auto;
-  display: block;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  max-width: 120px;           /* 表示サイズを制限 */
 }
 
 /* ホバー時の効果（任意だが見やすい） */
