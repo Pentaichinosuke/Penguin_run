@@ -107,6 +107,10 @@ a:hover {
   border-radius: 8px;
 }
 
+.gallery-item .caption {
+  pointer-events: none; /* キャプションはクリックを透過 */
+}
+
 .caption {
   margin-top: 8px;
   font-size: 14px;
